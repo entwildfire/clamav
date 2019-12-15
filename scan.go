@@ -255,8 +255,8 @@ func main() {
 	app := cli.NewApp()
 
 	app.Name = "clamav"
-	app.Author = "blacktop"
-	app.Email = "https://github.com/blacktop"
+	app.Author = "entwildfire"
+	app.Email = "https://github.com/entwildfire"
 	app.Version = Version + ", BuildTime: " + BuildTime
 	app.Compiled, _ = time.Parse("20060102", BuildTime)
 	app.Usage = "Malice ClamAV Plugin"
