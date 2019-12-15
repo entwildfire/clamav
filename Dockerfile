@@ -1,13 +1,13 @@
 FROM malice/alpine
 
-LABEL maintainer "https://github.com/blacktop"
+LABEL maintainer "https://github.com/entwildfire"
 
-LABEL malice.plugin.repository = "https://github.com/malice-plugins/clamav.git"
+LABEL malice.plugin.repository = "https://github.com/entwildfire/clamav.git"
 LABEL malice.plugin.category="av"
 LABEL malice.plugin.mime="*"
 LABEL malice.plugin.docker.engine="*"
 
-COPY . /go/src/github.com/malice-plugins/clamav
+COPY . /go/src/github.com/entwildfire/clamav
 RUN apk --update add --no-cache clamav ca-certificates
 RUN apk --update add --no-cache -t .build-deps \
   build-base \
@@ -20,7 +20,7 @@ RUN apk --update add --no-cache -t .build-deps \
   gcc \
   go \
   && echo "Building avscan Go binary..." \
-  && cd /go/src/github.com/malice-plugins/clamav \
+  && cd /go/src/github.com/entwildfire/clamav \
   && export GOPATH=/go \
   && go version \
   && go get \
